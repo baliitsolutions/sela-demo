@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sela Studio — Yoga & Pilates</title>
+  <meta name="description" content="Small-group yoga and reformer Pilates classes. Book a class, see the weekly timetable and try your first two weeks for $40.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Sela Studio, home">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="22" r="11" fill="var(--sun)"/>
+        <path d="M4 26h32M8 31h24M13 36h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span>Sela Studio</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Menu</span>
+      <span class="bars" aria-hidden="true"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#timetable">Timetable</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#teachers">Teachers</a></li>
+        <li><a href="#studio">Studio</a></li>
+      </ul>
+      <a class="btn btn-sun" href="#trial">Try 2 weeks</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-sky" aria-hidden="true">
+    <div class="sun"></div>
+    <div class="horizon">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="wrap hero-inner">
+    <h1>Slow down for an&nbsp;hour.</h1>
+    <p class="lead">Small-group yoga and reformer Pilates, never more than twelve people in the room. Come as you are; we'll meet you there.</p>
+    <div class="hero-actions">
+      <a class="btn btn-sun btn-lg" href="#trial">Try 2 weeks for $40</a>
+      <a class="btn btn-line btn-lg" href="#timetable">See the timetable</a>
+    </div>
+    <p class="next-class" data-next-class aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ============ CLASSES ============ -->
+<section class="section" id="classes">
+  <div class="wrap">
+    <header class="section-head">
+      <h2>Classes</h2>
+      <p>Pick by how you want to feel afterwards. Every class has options for beginners.</p>
+    </header>
+
+    <div class="classes">
+      <article class="class class-vinyasa">
+        <div class="class-top">
+          <h3>Vinyasa Flow</h3>
+          <p class="intensity" aria-label="Intensity 3 out of 3"><i></i><i></i><i></i></p>
+        </div>
+        <p>Breath-led movement that builds heat and strength. Expect to sweat a little.</p>
+        <p class="meta">60 min · all levels</p>
+      </article>
+      <article class="class class-yin">
+        <div class="class-top">
+          <h3>Yin & Restore</h3>
+          <p class="intensity" aria-label="Intensity 1 out of 3"><i></i><i class="off"></i><i class="off"></i></p>
+        </div>
+        <p>Long, supported holds with blankets and bolsters. The best sleep you'll have all week.</p>
+        <p class="meta">75 min · beginner friendly</p>
+      </article>
+      <article class="class class-reformer">
+        <div class="class-top">
+          <h3>Reformer Pilates</h3>
+          <p class="intensity" aria-label="Intensity 2 out of 3"><i></i><i></i><i class="off"></i></p>
+        </div>
+        <p>Spring-loaded machines for core strength and posture. Eight reformers per class.</p>
+        <p class="meta">50 min · all levels</p>
+      </article>
+      <article class="class class-prenatal">
+        <div class="class-top">
+          <h3>Prenatal Yoga</h3>
+          <p class="intensity" aria-label="Intensity 1 out of 3"><i></i><i class="off"></i><i class="off"></i></p>
+        </div>
+        <p>Gentle strength and breathing for every trimester, taught by a certified prenatal teacher.</p>
+        <p class="meta">60 min · from 14 weeks</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMETABLE ============ -->
+<section class="section section-tint" id="timetable">
+  <div class="wrap">
+    <header class="section-head">
+      <h2>This week's timetable</h2>
+      <p>Choose a day to see its classes. Spaces update when you book.</p>
+    </header>
+
+    <div class="tt-controls">
+      <div class="day-tabs" role="tablist" aria-label="Day of the week" data-day-tabs></div>
+      <div class="filters" role="group" aria-label="Filter by class" data-filters>
+        <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">All classes</button>
+        <button type="button" class="chip" data-filter="vinyasa" aria-pressed="false">Vinyasa</button>
+        <button type="button" class="chip" data-filter="yin" aria-pressed="false">Yin</button>
+        <button type="button" class="chip" data-filter="reformer" aria-pressed="false">Reformer</button>
+        <button type="button" class="chip" data-filter="prenatal" aria-pressed="false">Prenatal</button>
+      </div>
+    </div>
+
+    <ul class="sessions" role="tabpanel" data-sessions aria-live="polite"></ul>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <header class="section-head">
+      <h2>Pricing</h2>
+      <p>No joining fee, no long contracts. Pause your membership any time you travel.</p>
+    </header>
+
+    <div class="plans">
+      <div class="plan">
+        <h3>Drop-in</h3>
+        <p class="price"><strong>$24</strong> per class</p>
+        <ul>
+          <li>Any yoga class</li>
+          <li>Mat and props included</li>
+          <li>Reformer classes $32</li>
+        </ul>
+        <a class="btn btn-line" href="#trial">Book a class</a>
+      </div>
+      <div class="plan plan-feature">
+        <p class="plan-flag">Most chosen</p>
+        <h3>Unlimited</h3>
+        <p class="price"><strong>$149</strong> per month</p>
+        <ul>
+          <li>Every yoga class, every day</li>
+          <li>4 reformer classes a month</li>
+          <li>Bring a friend free once a month</li>
+          <li>Pause up to 2 months a year</li>
+        </ul>
+        <a class="btn btn-sun" href="#trial">Start unlimited</a>
+      </div>
+      <div class="plan">
+        <h3>10-class pack</h3>
+        <p class="price"><strong>$199</strong> per pack</p>
+        <ul>
+          <li>Use within 4 months</li>
+          <li>Share with one other person</li>
+          <li>Any class type</li>
+        </ul>
+        <a class="btn btn-line" href="#trial">Buy a pack</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEACHERS ============ -->
+<section class="section section-ink" id="teachers">
+  <div class="wrap">
+    <header class="section-head">
+      <h2>Teachers</h2>
+      <p>Over 3,000 hours of training between them, and still the first ones on the mat each morning.</p>
+    </header>
+
+    <div class="teachers">
+      <figure class="teacher">
+        <div class="portrait" data-initials="AN" role="img" aria-label="Photo of Ana Navarro"></div>
+        <figcaption>
+          <h3>Ana Navarro</h3>
+          <p>Founder · Vinyasa & Yin</p>
+        </figcaption>
+      </figure>
+      <figure class="teacher">
+        <div class="portrait" data-initials="JB" role="img" aria-label="Photo of Jonah Brooks"></div>
+        <figcaption>
+          <h3>Jonah Brooks</h3>
+          <p>Reformer Pilates</p>
+        </figcaption>
+      </figure>
+      <figure class="teacher">
+        <div class="portrait" data-initials="LK" role="img" aria-label="Photo of Lena Kovač"></div>
+        <figcaption>
+          <h3>Lena Kovač</h3>
+          <p>Prenatal & Restorative</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STUDIO + FAQ ============ -->
+<section class="section" id="studio">
+  <div class="wrap studio-grid">
+    <div>
+      <h2>The studio</h2>
+      <p class="lead">Two warm, quiet rooms above the bakery on Linden Street, with showers, lockers and tea after class.</p>
+      <dl class="facts">
+        <div><dt>Address</dt><dd>21 Linden Street, 2nd floor<br>Your City, 00000</dd></div>
+        <div><dt>Getting here</dt><dd>5 minutes from Central station. Bike racks at the door.</dd></div>
+        <div><dt>Contact</dt><dd><a href="mailto:hello@example.com">hello@example.com</a><br><a href="tel:+15550188300">(555) 018-8300</a></dd></div>
+      </dl>
+    </div>
+
+    <div class="faq">
+      <h3 class="faq-title">Before your first class</h3>
+      <details>
+        <summary>I've never done yoga. Which class should I take?</summary>
+        <p>Start with Yin & Restore or any Vinyasa marked "all levels". Tell your teacher it's your first time and they'll offer easier options.</p>
+      </details>
+      <details>
+        <summary>What should I bring?</summary>
+        <p>Comfortable clothes and water. Mats, blocks, blankets and towels are all provided.</p>
+      </details>
+      <details>
+        <summary>How early should I arrive?</summary>
+        <p>Ten minutes before your first class, so we can show you around and set up your space.</p>
+      </details>
+      <details>
+        <summary>What's the cancellation policy?</summary>
+        <p>Cancel up to 8 hours before class for a full credit. Later cancellations use up the class.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRIAL FORM ============ -->
+<section class="section trial" id="trial">
+  <div class="wrap trial-grid">
+    <div>
+      <h2>Two weeks, unlimited, $40.</h2>
+      <p class="lead">For new students only. Try every class type, then decide what suits you.</p>
+    </div>
+
+    <form class="trial-form" novalidate data-trial-form>
+      <div class="field">
+        <label for="t-name">First name</label>
+        <input id="t-name" name="name" type="text" autocomplete="given-name" required>
+        <p class="error" data-error-for="name">Enter your first name.</p>
+      </div>
+      <div class="field">
+        <label for="t-email">Email</label>
+        <input id="t-email" name="email" type="email" autocomplete="email" required>
+        <p class="error" data-error-for="email">Enter an email address like name@example.com.</p>
+      </div>
+      <div class="field">
+        <label for="t-class">Class you'd like to start with</label>
+        <select id="t-class" name="class">
+          <option>Not sure yet</option>
+          <option>Vinyasa Flow</option>
+          <option>Yin & Restore</option>
+          <option>Reformer Pilates</option>
+          <option>Prenatal Yoga</option>
+        </select>
+      </div>
+      <button class="btn btn-sun btn-lg" type="submit">Claim my 2 weeks</button>
+      <p class="form-success" role="status" hidden>You're in. Check your email for a link to book your first class.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="brand-small">Sela Studio</p>
+    <p>© <span data-year></span> Sela Studio. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">Privacy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Booking dialog (opened from the timetable) -->
+<dialog class="book-dialog" data-book-dialog aria-labelledby="dlg-title">
+  <form method="dialog">
+    <h3 id="dlg-title" data-dlg-title>Book class</h3>
+    <p data-dlg-detail></p>
+    <div class="dlg-actions">
+      <button class="btn btn-line" value="cancel">Cancel</button>
+      <button class="btn btn-sun" value="confirm">Book this class</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

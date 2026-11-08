@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sela — Documentation</title>
+<style>
+  body { font: 16px/1.65 system-ui, sans-serif; color: #2a2940; background: #f7f5fb; margin: 0; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1, h2 { color: #2b2a4c; line-height: 1.2; }
+  h2 { margin-top: 2.2em; padding-top: 1em; border-top: 1px solid #dcd6ea; }
+  code, pre { font-family: ui-monospace, Menlo, monospace; font-size: .92em; background: #ece7f6; border-radius: 6px; }
+  code { padding: 2px 6px; }
+  pre { padding: 14px 16px; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid #dcd6ea; vertical-align: top; }
+</style>
+</head>
+<body>
+<main>
+<h1>Sela — Yoga & Pilates Studio Landing Page</h1>
+<p>Thank you for your purchase. This guide covers everything you need to put the template online with your own content. No build tools are required: open <code>index.html</code> in a browser and you're running.</p>
+
+<h2>What's included</h2>
+<table>
+  <tr><th>File</th><th>Purpose</th></tr>
+  <tr><td><code>index.html</code></td><td>The page. All text and sections live here.</td></tr>
+  <tr><td><code>assets/css/style.css</code></td><td>All styling. Colours and fonts are variables at the top.</td></tr>
+  <tr><td><code>assets/js/main.js</code></td><td>Timetable, class filters, booking dialog, "next class" line, mobile menu, form validation.</td></tr>
+  <tr><td><code>assets/img/favicon.svg</code></td><td>Browser tab icon.</td></tr>
+  <tr><td><code>LICENSE.txt</code></td><td>What you may and may not do with the template.</td></tr>
+</table>
+
+<h2>Change colours and fonts</h2>
+<p>Open <code>assets/css/style.css</code> and edit the variables in <code>:root</code>. The hero sky, sun, buttons and dark sections all follow them.</p>
+<pre>:root {
+  --ink: #2b2a4c;   /* headings, dark sections, horizon lines */
+  --mist: #ece7f6;  /* tinted sections */
+  --sun: #f5b84a;   /* buttons and the sun */
+  --peach: #fde4c8; /* bottom of the hero sky */
+}</pre>
+<p>Each class type also has its own colour (<code>--c-vinyasa</code>, <code>--c-yin</code>, <code>--c-reformer</code>, <code>--c-prenatal</code>), used in the class list and timetable.</p>
+<p>To change fonts, replace the Google Fonts <code>&lt;link&gt;</code> in <code>index.html</code> and update <code>--font-display</code> and <code>--font-body</code>.</p>
+
+<h2>Edit your timetable</h2>
+<p>The whole timetable comes from <code>SCHEDULE</code> at the top of <code>assets/js/main.js</code>. Each day (0 = Sunday … 6 = Saturday) has a list of classes:</p>
+<pre>1: [
+  { time: "07:00", mins: 60, type: "vinyasa", teacher: "Ana", spots: 4, capacity: 12 },
+  ...
+],</pre>
+<ul>
+  <li><code>time</code>: 24-hour start time</li>
+  <li><code>mins</code>: class length in minutes</li>
+  <li><code>type</code>: one of the keys in <code>CLASS_TYPES</code></li>
+  <li><code>spots</code> / <code>capacity</code>: places left and total places. With 2 or fewer left the line turns amber; with 0 the class shows as full.</li>
+</ul>
+<p>The day tabs always start from today and show the next seven days. Classes that have already started today are marked "Started". The "Next class" line in the hero updates from the same data.</p>
+
+<h2>Add or rename a class type</h2>
+<ol>
+  <li>Add it to <code>CLASS_TYPES</code> in <code>main.js</code>, for example <code>hot: { name: "Hot Yoga", color: "var(--c-hot)" }</code>.</li>
+  <li>Add the colour <code>--c-hot</code> in <code>:root</code> of <code>style.css</code>.</li>
+  <li>Add a filter button in <code>index.html</code>: <code>&lt;button type="button" class="chip" data-filter="hot" aria-pressed="false"&gt;Hot&lt;/button&gt;</code></li>
+  <li>Optionally, add a card for it in the Classes section.</li>
+</ol>
+
+<h2>Connect real bookings</h2>
+<p>In the template, the Book button opens a demo dialog and marks the class as booked in the visitor's browser. Most studios use a booking system such as Mindbody, Momence, Glofox, Arketa or Calendly. To send visitors there, replace the body of <code>openBooking()</code> in <code>main.js</code> with a link:</p>
+<pre>function openBooking(c, d) {
+  window.open("https://your-booking-page.example.com", "_blank");
+}</pre>
+
+<h2>Receive trial sign-ups</h2>
+<p>The trial form validates and shows a confirmation, but doesn't send anything yet. Sign up for a form service such as Formspree, Getform or Netlify Forms and add its URL as the form's <code>action</code>:</p>
+<pre>&lt;form class="trial-form" novalidate data-trial-form
+      action="https://formspree.io/f/your-id" method="POST"&gt;</pre>
+
+<h2>Add teacher photos</h2>
+<p>Each portrait shows initials until you add an image:</p>
+<pre>&lt;div class="portrait" data-initials="AN"
+     style="background-image:url('assets/img/ana.jpg')"
+     role="img" aria-label="Photo of Ana Navarro"&gt;&lt;/div&gt;</pre>
+<p>Portrait images around 900 × 1200 px work best. The arched top is applied automatically.</p>
+
+<h2>Edit text, prices and contact details</h2>
+<p>All content is plain HTML in <code>index.html</code>, grouped by commented sections (<code>HERO</code>, <code>CLASSES</code>, <code>PRICING</code> and so on). Search for and replace <code>Sela Studio</code>, <code>hello@example.com</code>, <code>(555) 018-8300</code> and <code>21 Linden Street</code>.</p>
+
+<h2>Publish</h2>
+<p>Upload the whole folder to any static host: Netlify, Vercel, GitHub Pages, Cloudflare Pages, or the <code>public_html</code> folder of regular web hosting.</p>
+
+<h2>Browser support</h2>
+<p>Current versions of Chrome, Edge, Firefox and Safari, on desktop and mobile. Keyboard accessible, and the sunrise animation is switched off for visitors who prefer reduced motion.</p>
+
+<h2>Credits</h2>
+<ul>
+  <li>Fonts: Young Serif and Figtree, via Google Fonts (SIL Open Font License).</li>
+  <li>Illustrations and icons: original, included in the template licence.</li>
+</ul>
+</main>
+</body>
+</html>
